@@ -1,0 +1,2 @@
+E:\Planner\DDOCharGenNew\DDOCharacterPlanner\DDOCharacterPlanner\obj\Debug\DDOCharacterPlanner.csproj.ResolveComReference.cache
+E:\Planner\DDOCharGenNew\DDOCharacterPlanner\DDOCharacterPlanner\DDOCharacterPlanner.exe.config

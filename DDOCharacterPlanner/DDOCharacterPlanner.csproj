@@ -1,0 +1,619 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7449AF08-8D82-476F-B97E-A39A391CB3B7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DDOCharacterPlanner</RootNamespace>
+    <AssemblyName>DDOCharacterPlanner</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>.\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>DDOCharacterPlanner.DDOCharacterPlanner1</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>DDOCP.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>B61D861296E799A5601F91E0CE08BACB793DCFFD</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>DDOCharacterPlanner_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CharacterData\CharacterFeatClass.cs" />
+    <Compile Include="CharacterData\CharacterFeatCollectionClass.cs" />
+    <Compile Include="CharacterData\CharacterManagerClass.cs" />
+    <Compile Include="CharacterData\CharacterAbilityClass.cs" />
+    <Compile Include="CharacterData\CharacterRaceClass.cs" />
+    <Compile Include="CharacterData\CharacterSkillClass.cs" />
+    <Compile Include="CharacterData\CharacterAlignmentClass.cs" />
+    <Compile Include="CharacterData\CharaterPastLifeClass.cs" />
+    <Compile Include="Data\AutoGrantedFeatDataClass.cs" />
+    <Compile Include="Data\CharacterDataCollectionClass.cs" />
+    <Compile Include="Data\CharacterLevelDataClass.cs" />
+    <Compile Include="Data\FeatCategoryDataClass.cs" />
+    <Compile Include="Data\FeatCategoryDataCollectionClass.cs" />
+    <Compile Include="Data\FeatDataClass.cs" />
+    <Compile Include="Data\FeatDataCollectionClass.cs" />
+    <Compile Include="Model\Enhancement\EnhancementTreeRequirementModel.cs" />
+    <Compile Include="Model\General\StanceGroupModel.cs" />
+    <Compile Include="Model\General\StanceModel.cs" />
+    <Compile Include="Model\General\TableNamesModel.cs" />
+    <Compile Include="Model\Modifier\ModifierMethodModel.cs" />
+    <Compile Include="Model\General\TomeModel.cs" />
+    <Compile Include="SaveDataModel\SaveSkinModel.cs" />
+    <Compile Include="Screens\Controls\CustomRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Screens\Controls\LabelWithBorder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Screens\Controls\NumericUpDownWithBlankBordered.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Screens\Controls\NumericUpDownWithBlank.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Screens\Controls\RepeatingButtonClass.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Screens\DataInput\DataInputTomeScreenClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\DataInput\DataInputTomeScreenClass.Designer.cs">
+      <DependentUpon>DataInputTomeScreenClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\DataInput\DialogBoxes\EditModifierDialogClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\DataInput\DialogBoxes\EditModifierDialogClass.Designer.cs">
+      <DependentUpon>EditModifierDialogClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\DataInput\DialogBoxes\EditRequirementDialogClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\DataInput\DialogBoxes\EditRequirementDialogClass.Designer.cs">
+      <DependentUpon>EditRequirementDialogClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\DataInput\DialogBoxes\ModifierDialogClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\DataInput\DialogBoxes\ModifierDialogClass.Designer.cs">
+      <DependentUpon>ModifierDialogClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\DataInput\DialogBoxes\NewBonusTypeDialogClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\DataInput\DialogBoxes\NewBonusTypeDialogClass.Designer.cs">
+      <DependentUpon>NewBonusTypeDialogClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\DataInput\DialogBoxes\NewRequirementDialogClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\DataInput\DialogBoxes\NewRequirementDialogClass.Designer.cs">
+      <DependentUpon>NewRequirementDialogClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\DataInput\DialogBoxes\NewModifierDialogClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\DataInput\DialogBoxes\NewModifierDialogClass.Designer.cs">
+      <DependentUpon>NewModifierDialogClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\DataInput\DialogBoxes\RequirementDialogClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\DataInput\DialogBoxes\RequirementDialogClass.Designer.cs">
+      <DependentUpon>RequirementDialogClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\DataInput\SharedPanels\ModifiersPanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\DataInput\SharedPanels\ModifiersPanel2.Designer.cs">
+      <DependentUpon>ModifiersPanel2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\MainScreen\EditScreens\AlignmentEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\MainScreen\EditScreens\AlignmentEditForm.Designer.cs">
+      <DependentUpon>AlignmentEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\MainScreen\EditScreens\ClassEditScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\MainScreen\EditScreens\ClassEditScreen.Designer.cs">
+      <DependentUpon>ClassEditScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\MainScreen\EditScreens\PastLifeEditScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\MainScreen\EditScreens\PastLifeEditScreen.Designer.cs">
+      <DependentUpon>PastLifeEditScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\MainScreen\EditScreens\SkillEditScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\MainScreen\EditScreens\SkillEditScreen.Designer.cs">
+      <DependentUpon>SkillEditScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\MainScreen\EditScreens\SkillTomePanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\MainScreen\EditScreens\SkillTomePanel.Designer.cs">
+      <DependentUpon>SkillTomePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\MainScreen\EditScreens\FeatsEditScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\MainScreen\EditScreens\FeatsEditScreen.designer.cs">
+      <DependentUpon>FeatsEditScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\MainScreen\Panels\MainScreenFeatsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\MainScreen\Panels\MainScreenFeatsPanel.Designer.cs">
+      <DependentUpon>MainScreenFeatsPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\ScreenMessengerClass.cs" />
+    <Compile Include="Screens\SkinSettings.cs" />
+    <Compile Include="Screens\DataInput\DataInputEnhancementSlotScreenClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\DataInput\DataInputEnhancementSlotScreenClass.Designer.cs">
+      <DependentUpon>DataInputEnhancementSlotScreenClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Controls\IconControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Controls\IconControl.Designer.cs">
+      <DependentUpon>IconControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Controls\IconListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Controls\IconListControl.Designer.cs">
+      <DependentUpon>IconListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\UserSettings\SkinEditorScreenClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\UserSettings\SkinEditorScreenClass.Designer.cs">
+      <DependentUpon>SkinEditorScreenClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\SkinStyleClass.cs" />
+    <Compile Include="Utility\Constants.cs" />
+    <Compile Include="Data\ClassLevelDataClass.cs" />
+    <Compile Include="Data\AlignmentDataClass.cs" />
+    <Compile Include="Data\RaceDataClass.cs" />
+    <Compile Include="Data\RaceDataCollectionClass.cs" />
+    <Compile Include="Model\Character\CharacterBonusFeatModel.cs" />
+    <Compile Include="Model\Character\CharacterModel.cs" />
+    <Compile Include="Model\Class\ClassBonusFeatModel.cs" />
+    <Compile Include="Model\Class\ClassLevelDetailModel.cs" />
+    <Compile Include="Model\Class\AlignmentModel.cs" />
+    <Compile Include="Model\Class\SkillModel.cs" />
+    <Compile Include="Model\Destiny\DestinySphereModel.cs" />
+    <Compile Include="Model\Enhancement\EnhancementModel.cs" />
+    <Compile Include="Model\Enhancement\EnhancementRankModel.cs" />
+    <Compile Include="Model\Enhancement\EnhancementRankRequirementModel.cs" />
+    <Compile Include="Model\Enhancement\EnhancementRankModifierModel.cs" />
+    <Compile Include="Model\Enhancement\EnhancementSlotModel.cs" />
+    <Compile Include="Model\Enhancement\EnhancementTreeModel.cs" />
+    <Compile Include="Model\Feat\FeatTargetModel.cs" />
+    <Compile Include="Model\Feat\FeatCategoryModel.cs" />
+    <Compile Include="Model\Feat\FeatFeatTypeModel.cs" />
+    <Compile Include="Model\Feat\FeatModel.cs" />
+    <Compile Include="Model\Feat\FeatModifierModel.cs" />
+    <Compile Include="Model\Feat\FeatRequirementModel.cs" />
+    <Compile Include="Model\Feat\FeatTypeModel.cs" />
+    <Compile Include="Model\General\AbilityModel.cs" />
+    <Compile Include="Model\General\AttributeModel.cs" />
+    <Compile Include="Model\General\BonusTypeModel.cs" />
+    <Compile Include="Model\General\TargetModel.cs" />
+    <Compile Include="Model\General\SaveModel.cs" />
+    <Compile Include="Model\Modifier\ModifierModel.cs" />
+    <Compile Include="Model\Race\RaceLevelDetailModel.cs" />
+    <Compile Include="Model\Race\RaceBonusFeatModel.cs" />
+    <Compile Include="Model\Race\RaceModel.cs" />
+    <Compile Include="Model\Requirement\RequirementModel.cs" />
+    <Compile Include="Model\Spell\SpellDetailsModel.cs" />
+    <Compile Include="Model\Spell\SpellModel.cs" />
+    <Compile Include="Model\Spell\SpellSchoolModel.cs" />
+    <Compile Include="SaveDataModel\SaveBaseModel.cs" />
+    <Compile Include="Screens\DataInput\SharedPanels\AutoGrantedFeatsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\DataInput\SharedPanels\AutoGrantedFeatsPanel.Designer.cs">
+      <DependentUpon>AutoGrantedFeatsPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\DataInput\DataInputCharacterScreenClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\DataInput\DataInputCharacterScreenClass.Designer.cs">
+      <DependentUpon>DataInputCharacterScreenClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\DataInput\DataInputFeatScreenClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\DataInput\DataInputFeatScreenClass.Designer.cs">
+      <DependentUpon>DataInputFeatScreenClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\DataInput\DataInputRaceScreenClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\DataInput\DataInputRaceScreenClass.Designer.cs">
+      <DependentUpon>DataInputRaceScreenClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\DataInput\DataInputClassScreenClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\DataInput\DataInputClassScreenClass.Designer.cs">
+      <DependentUpon>DataInputClassScreenClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ClassDataClass.cs" />
+    <Compile Include="Data\ClassDataCollectionClass.cs" />
+    <Compile Include="DataAccess\DatabaseCommandExecution.cs" />
+    <Compile Include="DataAccess\DbDataReaderExtensions.cs" />
+    <Compile Include="DataAccess\QueryInformation.cs" />
+    <Compile Include="DataAccess\QueryParameter.cs" />
+    <Compile Include="Data\DataManagerClass.cs" />
+    <Compile Include="DDOCharacterPlanner.cs" />
+    <Compile Include="Utility\IconClass.cs" />
+    <Compile Include="Screens\DataInput\DataInputSpellScreenClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\DataInput\DataInputSpellScreenClass.Designer.cs">
+      <DependentUpon>DataInputSpellScreenClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\DataInput\DataInputEnhancementScreenClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\DataInput\DataInputEnhancementScreenClass.Designer.cs">
+      <DependentUpon>DataInputEnhancementScreenClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\DataInput\SharedPanels\RequirementsPanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\DataInput\SharedPanels\RequirementsPanel2.Designer.cs">
+      <DependentUpon>RequirementsPanel2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Controls\CheckedListBoxEditWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Controls\CheckedListBoxEditWindow.Designer.cs">
+      <DependentUpon>CheckedListBoxEditWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Controls\HTMLEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Controls\HTMLEditor.Designer.cs">
+      <DependentUpon>HTMLEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Controls\SlotControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Controls\SlotControl.Designer.cs">
+      <DependentUpon>SlotControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Controls\TextEditWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Controls\TextEditWindow.Designer.cs">
+      <DependentUpon>TextEditWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Controls\TreeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Controls\TreeControl.Designer.cs">
+      <DependentUpon>TreeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\MainScreen\EditScreens\AbilityEditPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\MainScreen\EditScreens\AbilityEditPanel.Designer.cs">
+      <DependentUpon>AbilityEditPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\MainScreen\Panels\MainScreenAbilitiesPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\MainScreen\Panels\MainScreenAbilitiesPanel.Designer.cs">
+      <DependentUpon>MainScreenAbilitiesPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\MainScreen\Panels\MainScreenAdditionalStatsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\MainScreen\Panels\MainScreenAdditionalStatsPanel.Designer.cs">
+      <DependentUpon>MainScreenAdditionalStatsPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\MainScreen\Panels\MainScreenSkillPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\MainScreen\Panels\MainScreenSkillPanel.Designer.cs">
+      <DependentUpon>MainScreenSkillPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\MainScreen\MainScreenClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\MainScreen\MainScreenClass.Designer.cs">
+      <DependentUpon>MainScreenClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Shared\BaseModel.cs" />
+    <Compile Include="Model\Class\ClassModel.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\UIManagerClass.cs" />
+    <Compile Include="Utility\UtilityClass.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Desktop\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\DataInput\DataInputTomeScreenClass.resx">
+      <DependentUpon>DataInputTomeScreenClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\DataInput\DialogBoxes\EditModifierDialogClass.resx">
+      <DependentUpon>EditModifierDialogClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\DataInput\DialogBoxes\ModifierDialogClass.resx">
+      <DependentUpon>ModifierDialogClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\DataInput\DialogBoxes\NewBonusTypeDialogClass.resx">
+      <DependentUpon>NewBonusTypeDialogClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\DataInput\DialogBoxes\NewModifierDialogClass.resx">
+      <DependentUpon>NewModifierDialogClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\DataInput\DialogBoxes\NewRequirementDialogClass.resx">
+      <DependentUpon>NewRequirementDialogClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\DataInput\DialogBoxes\RequirementDialogClass.resx">
+      <DependentUpon>RequirementDialogClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\DataInput\SharedPanels\AutoGrantedFeatsPanel.resx">
+      <DependentUpon>AutoGrantedFeatsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\DataInput\DataInputCharacterScreenClass.resx">
+      <DependentUpon>DataInputCharacterScreenClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\DataInput\DataInputClassScreenClass.resx">
+      <DependentUpon>DataInputClassScreenClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\DataInput\DataInputEnhancementSlotScreenClass.resx">
+      <DependentUpon>DataInputEnhancementSlotScreenClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\DataInput\DataInputFeatScreenClass.resx">
+      <DependentUpon>DataInputFeatScreenClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\DataInput\DataInputRaceScreenClass.resx">
+      <DependentUpon>DataInputRaceScreenClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\DataInput\DataInputSpellScreenClass.resx">
+      <DependentUpon>DataInputSpellScreenClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\DataInput\DataInputEnhancementScreenClass.resx">
+      <DependentUpon>DataInputEnhancementScreenClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\DataInput\DialogBoxes\EditRequirementDialogClass.resx">
+      <DependentUpon>EditRequirementDialogClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\DataInput\SharedPanels\ModifiersPanel2.resx">
+      <DependentUpon>ModifiersPanel2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\DataInput\SharedPanels\RequirementsPanel2.resx">
+      <DependentUpon>RequirementsPanel2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Controls\CheckedListBoxEditWindow.resx">
+      <DependentUpon>CheckedListBoxEditWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Controls\HTMLEditor.resx">
+      <DependentUpon>HTMLEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Controls\IconControl.resx">
+      <DependentUpon>IconControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Controls\IconListControl.resx">
+      <DependentUpon>IconListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Controls\SlotControl.resx">
+      <DependentUpon>SlotControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Controls\TextEditWindow.resx">
+      <DependentUpon>TextEditWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Controls\TreeControl.resx">
+      <DependentUpon>TreeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\MainScreen\EditScreens\AbilityEditPanel.resx">
+      <DependentUpon>AbilityEditPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\MainScreen\EditScreens\AlignmentEditForm.resx">
+      <DependentUpon>AlignmentEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\MainScreen\EditScreens\ClassEditScreen.resx">
+      <DependentUpon>ClassEditScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\MainScreen\EditScreens\PastLifeEditScreen.resx">
+      <DependentUpon>PastLifeEditScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\MainScreen\EditScreens\SkillEditScreen.resx">
+      <DependentUpon>SkillEditScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\MainScreen\EditScreens\SkillTomePanel.resx">
+      <DependentUpon>SkillTomePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\MainScreen\EditScreens\FeatsEditScreen.resx">
+      <DependentUpon>FeatsEditScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\MainScreen\Panels\MainScreenAbilitiesPanel.resx">
+      <DependentUpon>MainScreenAbilitiesPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\MainScreen\Panels\MainScreenAdditionalStatsPanel.resx">
+      <DependentUpon>MainScreenAdditionalStatsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\MainScreen\MainScreenClass.resx">
+      <DependentUpon>MainScreenClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\MainScreen\Panels\MainScreenFeatsPanel.resx">
+      <DependentUpon>MainScreenFeatsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\MainScreen\Panels\MainScreenSkillPanel.resx">
+      <DependentUpon>MainScreenSkillPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\UserSettings\SkinEditorScreenClass.resx">
+      <DependentUpon>SkinEditorScreenClass.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DDOCharacterPlanner.sdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DDOCP.ico" />
+    <Compile Include="CharacterData\CharacterClassClass.cs" />
+    <None Include="DDOCharacterPlanner_TemporaryKey.pfx" />
+    <None Include="Graphics\Interface\PlusButton.png" />
+    <None Include="Graphics\Interface\MinusButton.png" />
+    <None Include="Graphics\Interface\MinusButtonDisabled.png" />
+    <None Include="Graphics\Interface\PlusButtonDisabled.png" />
+    <None Include="Resources\MinusButtonDisabled.png" />
+    <None Include="Resources\PlusButtonDisabled.png" />
+    <Content Include="Graphics\Interface\MinusButtonPressSmall.png" />
+    <Content Include="Graphics\Interface\MinusButtonSmall.png" />
+    <Content Include="Graphics\Interface\PlusButtonPressSmall.png" />
+    <Content Include="Graphics\Interface\PlusButtonSmall.png" />
+    <Content Include="Graphics\Interface\smallarrowdowndisabled.png" />
+    <Content Include="Graphics\Interface\smallarrowupdisabled.png" />
+    <Content Include="Resources\Add.png" />
+    <Content Include="Resources\Bold.png" />
+    <Content Include="Resources\Italic.png" />
+    <None Include="Resources\magnifier_16xLG.png" />
+    <None Include="Resources\MinusButtonSmall.png" />
+    <None Include="Resources\PlusButtonSmall.png" />
+    <Content Include="Resources\Redo.png" />
+    <None Include="Resources\smallarrowdown.png" />
+    <None Include="Resources\smallarrowup.png" />
+    <Content Include="Resources\Underline.png" />
+    <Content Include="Resources\Undo.png" />
+    <None Include="Resources\DeleteSmall.png" />
+    <None Include="Resources\Delete16x16.png" />
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="MSHTML">
+      <Guid>{3050F1C5-98B5-11CF-BB82-00AA00BDCE0B}</Guid>
+      <VersionMajor>4</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Screens\MainScreen\DialogBoxes\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

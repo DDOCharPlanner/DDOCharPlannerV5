@@ -1,0 +1,52 @@
+Mainscreen
+	Skin Skill Subpanel
+	Additional Stats
+	Known Feats
+	Enhancements
+	Destinies(future)
+	Armory(future)
+	SkinEditor
+	Save File
+	Load File
+	Import Text
+	Export Text
+
+Alignment
+	need to complete
+
+Race/Class
+	Complete
+
+PastLife
+	Skin Panel
+	Epic Past Life
+	Granted feats
+
+Skills
+	complete
+
+Feats
+	Unknown
+
+Enhancements
+	Unknown
+
+Additional Stats
+	Unknown
+
+Print
+	Unknown
+
+Export
+	Unknown
+
+
+
+
+
+Epic Destiny
+	Future
+
+Gear
+	Future
+		
